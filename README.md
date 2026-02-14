@@ -142,3 +142,42 @@ Use GitHub Issues and Discussions in the relevant repositories to:
 * propose new readiness metrics
 
 ---
+
+## 🌐 This Repository - Landing Page
+
+This repository hosts the **official R4SUB landing page** at **https://R4SUB.github.io/**
+
+### Site Structure
+
+```
+R4SUB.github.io/
+├── index.html              # Main landing page
+├── assets/
+│   ├── css/style.css       # Professional styling
+│   ├── js/main.js          # Interactive features
+│   └── favicon.svg         # Site icon
+├── .nojekyll               # Disable Jekyll processing
+└── README.md               # This file
+```
+
+### Local Development
+
+```bash
+# Clone and preview
+git clone https://github.com/R4SUB/R4SUB.github.io
+cd R4SUB.github.io
+
+# Option 1: Open index.html directly in browser
+# Option 2: Use a local server
+python -m http.server 8000
+# Then visit: http://localhost:8000
+```
+
+### Technology
+
+- **HTML5** - Semantic markup
+- **CSS3** - Modern responsive design (no frameworks)
+- **Vanilla JavaScript** - Fast, dependency-free
+- **GitHub Pages** - Automatic deployment on push
+
+---

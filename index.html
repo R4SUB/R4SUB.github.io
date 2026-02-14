@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="R4SUB - Clinical Submission Readiness Framework for R. Quantify and improve regulatory submission quality through evidence-based scoring.">
+    <meta name="keywords" content="R, clinical trials, regulatory submission, CDISC, SDTM, ADaM, validation, quality">
+    <meta name="author" content="R4SUB Team">
+    <title>R4SUB - Clinical Submission Readiness, Quantified</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <span class="logo">R<span class="highlight">4</span>SUB</span>
+            </div>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#packages" class="nav-link">Packages</a></li>
+                <li><a href="#getting-started" class="nav-link">Get Started</a></li>
+                <li><a href="#documentation" class="nav-link">Docs</a></li>
+                <li><a href="https://github.com/R4SUB" class="nav-link" target="_blank">GitHub</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    Clinical Submission Readiness, <span class="highlight">Quantified</span>
+                </h1>
+                <p class="hero-subtitle">
+                    An open-source R ecosystem for evidence-based assessment of regulatory submission quality.
+                    Transparent, auditable, and built for the modern clinical data scientist.
+                </p>
+                <div class="hero-actions">
+                    <a href="#getting-started" class="btn btn-primary">Get Started</a>
+                    <a href="#packages" class="btn btn-secondary">Explore Packages</a>
+                </div>
+            </div>
+            <div class="hero-graphic">
+                <div class="code-window">
+                    <div class="code-header">
+                        <span class="dot red"></span>
+                        <span class="dot yellow"></span>
+                        <span class="dot green"></span>
+                    </div>
+                    <pre class="code-content"><code><span class="comment"># Assess submission readiness</span>
+<span class="keyword">library</span>(r4subcore)
+
+ctx <span class="operator">&lt;-</span> <span class="function">r4sub_run_context</span>(
+  study_id = <span class="string">"STUDY001"</span>,
+  environment = <span class="string">"PROD"</span>
+)
+
+evidence <span class="operator">&lt;-</span> <span class="function">p21_to_evidence</span>(
+  p21_results, ctx
+)</code></pre>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section class="section section-about" id="about">
+        <div class="container">
+            <div class="section-header">
+                <h2>Why R4SUB?</h2>
+                <p class="section-subtitle">
+                    Submission readiness is more than validation reports. It's an evidence graph across datasets, metadata, traceability, and reviewer experience.
+                </p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Evidence-Based Scoring</h3>
+                    <p>Normalize heterogeneous sources (Pinnacle21, OpenCDISC, internal engines) into a unified evidence table. Transparent, reproducible scoring primitives.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔍</div>
+                    <h3>Transparent & Auditable</h3>
+                    <p>No black-box algorithms. Every weight, threshold, and aggregation method is configurable and documented. Full traceability from raw input to final score.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🧩</div>
+                    <h3>Modular Ecosystem</h3>
+                    <p>Core contracts separate from domain logic. Mix and match packages for quality, traceability, risk, and usability assessment.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🛠️</div>
+                    <h3>Tool-Agnostic</h3>
+                    <p>Built to integrate with your existing validation infrastructure. Parsers for common tools, extensible for proprietary systems.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Packages Section -->
+    <section class="section section-packages" id="packages">
+        <div class="container">
+            <div class="section-header">
+                <h2>The R4SUB Ecosystem</h2>
+                <p class="section-subtitle">Modular packages for comprehensive submission assessment</p>
+            </div>
+            <div class="packages-grid">
+                <div class="package-card available">
+                    <div class="package-status">
+                        <span class="badge badge-success">Available</span>
+                    </div>
+                    <h3 class="package-name">r4subcore</h3>
+                    <p class="package-version">v0.1.0</p>
+                    <p class="package-description">
+                        Foundational contracts: evidence schema, run context, parsers, scoring primitives. The boring, stable core.
+                    </p>
+                    <ul class="package-features">
+                        <li>Evidence table schema + validators</li>
+                        <li>Pinnacle21 parser</li>
+                        <li>Severity mapping & normalization</li>
+                        <li>Indicator registry</li>
+                    </ul>
+                    <div class="package-links">
+                        <a href="https://github.com/R4SUB/r4subcore" class="link-icon" target="_blank" title="GitHub">
+                            <svg width="20" height="20" viewBox="0 0 16 16" fill="currentColor">
+                                <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/>
+                            </svg>
+                        </a>
+                        <a href="r4subcore/" class="link-icon" title="Documentation">
+                            <svg width="20" height="20" viewBox="0 0 16 16" fill="currentColor">
+                                <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5V2zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1H4z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="package-card planned">
+                    <div class="package-status">
+                        <span class="badge badge-info">Planned</span>
+                    </div>
+                    <h3 class="package-name">r4subtrace</h3>
+                    <p class="package-version">Roadmap: Q2 2026</p>
+                    <p class="package-description">
+                        Traceability analysis: ADaM spec ↔ code ↔ outputs. Derivation completeness, lineage graphs, coverage metrics.
+                    </p>
+                    <ul class="package-features">
+                        <li>Spec-to-output traceability</li>
+                        <li>Code-to-dataset lineage</li>
+                        <li>Derivation coverage scoring</li>
+                    </ul>
+                </div>
+
+                <div class="package-card planned">
+                    <div class="package-status">
+                        <span class="badge badge-info">Planned</span>
+                    </div>
+                    <h3 class="package-name">r4subrisk</h3>
+                    <p class="package-version">Roadmap: Q3 2026</p>
+                    <p class="package-description">
+                        Risk assessment: FMEA-style impact scoring, defect severity weighting, submission delay prediction models.
+                    </p>
+                    <ul class="package-features">
+                        <li>Defect impact classification</li>
+                        <li>Risk heat maps</li>
+                        <li>Predictive delay models</li>
+                    </ul>
+                </div>
+
+                <div class="package-card planned">
+                    <div class="package-status">
+                        <span class="badge badge-info">Planned</span>
+                    </div>
+                    <h3 class="package-name">r4subscore</h3>
+                    <p class="package-version">Roadmap: Q4 2026</p>
+                    <p class="package-description">
+                        Submission Confidence Index (SCI): multi-domain aggregation, calibration against real submissions, industry benchmarks.
+                    </p>
+                    <ul class="package-features">
+                        <li>SCI calculation engine</li>
+                        <li>Multi-domain aggregation</li>
+                        <li>Benchmark comparisons</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Getting Started Section -->
+    <section class="section section-start" id="getting-started">
+        <div class="container">
+            <div class="section-header">
+                <h2>Get Started</h2>
+                <p class="section-subtitle">Install r4subcore and start assessing your submission in minutes</p>
+            </div>
+            <div class="start-content">
+                <div class="start-step">
+                    <h3>1. Installation</h3>
+                    <div class="code-block">
+                        <button class="copy-btn" data-copy="install">Copy</button>
+                        <pre><code id="install-code"># Install from GitHub (CRAN submission planned)
+# install.packages("pak")
+pak::pak("R4SUB/r4subcore")</code></pre>
+                    </div>
+                </div>
+
+                <div class="start-step">
+                    <h3>2. Create a Run Context</h3>
+                    <div class="code-block">
+                        <button class="copy-btn" data-copy="context">Copy</button>
+                        <pre><code id="context-code">library(r4subcore)
+
+ctx <- r4sub_run_context(
+  study_id = "STUDY001",
+  environment = "PROD"
+)
+
+ctx$run_id  # Unique identifier for this assessment</code></pre>
+                    </div>
+                </div>
+
+                <div class="start-step">
+                    <h3>3. Ingest Validation Results</h3>
+                    <div class="code-block">
+                        <button class="copy-btn" data-copy="ingest">Copy</button>
+                        <pre><code id="ingest-code"># Parse Pinnacle21 output
+p21_data <- read.csv("pinnacle21_report.csv")
+
+evidence <- p21_to_evidence(
+  p21_data,
+  ctx = ctx,
+  source_version = "P21-3.1"
+)
+
+# View summary
+evidence_summary(evidence)</code></pre>
+                    </div>
+                </div>
+
+                <div class="start-step">
+                    <h3>4. Score and Analyze</h3>
+                    <div class="code-block">
+                        <button class="copy-btn" data-copy="score">Copy</button>
+                        <pre><code id="score-code"># Aggregate by indicator
+scores <- aggregate_indicator_score(
+  evidence,
+  by = "indicator_id",
+  method = "weighted"
+)
+
+# View worst performers
+head(scores[order(scores$score), ])</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Documentation Section -->
+    <section class="section section-docs" id="documentation">
+        <div class="container">
+            <div class="section-header">
+                <h2>Documentation</h2>
+            </div>
+            <div class="docs-grid">
+                <a href="r4subcore/" class="doc-card">
+                    <h3>📘 r4subcore Reference</h3>
+                    <p>Complete function reference, examples, and vignettes</p>
+                </a>
+                <a href="https://github.com/R4SUB/r4subcore/blob/main/README.md" class="doc-card">
+                    <h3>🚀 Quick Start Guide</h3>
+                    <p>Get up and running in 5 minutes</p>
+                </a>
+                <a href="https://github.com/R4SUB" class="doc-card">
+                    <h3>💻 GitHub Organization</h3>
+                    <p>Browse all R4SUB repositories and code</p>
+                </a>
+                <a href="https://github.com/R4SUB/r4subcore/issues" class="doc-card">
+                    <h3>🐛 Report an Issue</h3>
+                    <p>Found a bug? Have a feature request? Let us know</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>R4SUB</h4>
+                    <p>Clinical submission readiness, quantified.</p>
+                    <p class="footer-license">Released under the MIT License</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul class="footer-links">
+                        <li><a href="#getting-started">Getting Started</a></li>
+                        <li><a href="r4subcore/">Documentation</a></li>
+                        <li><a href="https://github.com/R4SUB">GitHub</a></li>
+                        <li><a href="https://github.com/R4SUB/r4subcore/issues">Issue Tracker</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Community</h4>
+                    <ul class="footer-links">
+                        <li><a href="https://github.com/R4SUB/r4subcore/blob/main/CONTRIBUTING.md">Contributing</a></li>
+                        <li><a href="https://github.com/R4SUB/r4subcore/blob/main/CODE_OF_CONDUCT.md">Code of Conduct</a></li>
+                        <li><a href="https://github.com/R4SUB/r4subcore/discussions">Discussions</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 R4SUB Contributors. Built with ❤️ for the clinical data science community.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
